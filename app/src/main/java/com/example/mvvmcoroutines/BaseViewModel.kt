@@ -18,7 +18,7 @@ abstract class BaseViewModel: ViewModel() {
     // проверяет на наличие ошибок и сетит данные в виде ивента либо в
     // лайвдату либо в колбек.
 
-    fun <T> requestwithLiveData(liveData: MutableLiveData<Event<T>>,request: suspend()->ResponseWrapper<T>){
+    fun <T> requestWithLiveData(liveData: MutableLiveData<Event<T>>,request: suspend()->ResponseWrapper<T>){
         liveData.postValue(Event.loading())
 
         // Привязываемся к жизненному циклу ViewModel, используя viewModelScope.
